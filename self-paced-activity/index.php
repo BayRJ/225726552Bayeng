@@ -9,21 +9,21 @@
 
 <body>
     <h2>List of Users</h2>
+    <?php
 
+    include "db.php";
+
+    $sql = "SELECT * from users";
+    $result = $conn->query($sql);
+
+    ?>
     <table border="1">
         <tr>
             <th>Name</th>
             <th>Email</th>
             <th>Action</th>
         </tr>
-        <?php
 
-        include "db.php";
-
-        $sql = "Select * from users";
-        $result = $conn->query($sql);
-
-        ?>
         <?php
         if ($result->num_rows > 0) {
             while ($row = $result->_assoc()) {
