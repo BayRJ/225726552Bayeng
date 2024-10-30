@@ -3,8 +3,8 @@
 include 'db.php';
 
 
-if (isset($GET['id'])) {
-    $id = $GET['id'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
     $sql = "SELECT * FROM users WHERE id=$id";
     $result = $conn->query($sql);
