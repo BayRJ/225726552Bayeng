@@ -13,7 +13,6 @@
             margin-top: 200px;
             text-transform: uppercase;
             font-size: 60px;
-            font-weight: bold;
 
         }
     </style>

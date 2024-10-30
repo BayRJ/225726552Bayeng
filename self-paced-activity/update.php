@@ -117,6 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin-top: 30px;
             text-align: center;
             display: inline-block;
+
         }
 
 
@@ -152,6 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         input[type="submit"] {
             width: 50%;
             padding: 10px;
+            padding-right: 15px;
             border: none;
             background-color: #A52A2A;
             color: white;
@@ -159,6 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 1rem;
             cursor: pointer;
             margin: auto;
+            margin-right: 62px;
             display: block;
 
         }
@@ -208,6 +211,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: 10px solid black;
         }
     </style>
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -229,7 +234,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
     <div class="link">
 
-        <a href="index.php" class="link">Back to users table</a>
+        <a href="index.php" class="link"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+            Back to users table</a>
     </div>
 
 

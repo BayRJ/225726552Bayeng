@@ -195,6 +195,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: 10px solid black;
         }
     </style>
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -213,7 +215,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
     <div class="link">
 
-        <a href="index.php" class="link">Back to users table</a>
+        <a href="index.php" class="link"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+            Back to users table</a>
     </div>
 
 </body>

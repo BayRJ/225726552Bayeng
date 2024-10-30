@@ -26,7 +26,6 @@ $result = $conn->query($sql);
             width: 100vw;
             height: 100vh;
             text-align: center;
-            overflow: hidden;
         }
 
         h2 {
@@ -95,6 +94,7 @@ $result = $conn->query($sql);
             margin-top: 0;
         }
     </style>
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -115,8 +115,10 @@ $result = $conn->query($sql);
                 echo "<tr>";
                 echo "<th>" . $row['name'] . "</th>";
                 echo "<td>" . $row['email'] . "</td>";
-                echo '<td class="action"><a href="delete.php?id=' . $row['id'] . '">Delete</a></td>';
-                echo '<td class="action"><a href="update.php?id=' . $row['id'] . '">Update</a></td>';
+                echo '<td class="action"><i class="fa fa-trash" aria-hidden="true"></i>
+<a href="delete.php?id=' . $row['id'] . '">Delete</a></td>';
+                echo '<td class="action"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+<a href="update.php?id=' . $row['id'] . '">Update</a></td>';
                 echo "</tr>";
             }
         } else {
@@ -125,7 +127,8 @@ $result = $conn->query($sql);
 
         ?>
     </table>
-    <a href="add.php">Add new user</a>
+    <a href="add.php">
+        <i class="fa fa-user-plus "></i> Add new user</a>
 </body>
 
 </html>
