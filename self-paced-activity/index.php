@@ -25,6 +25,7 @@
         </tr>
 
         <?php
+
         if ($result->num_rows > 0) {
             while ($row = $result->_assoc()) {
                 echo "<tr>";
