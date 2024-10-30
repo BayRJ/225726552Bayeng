@@ -12,6 +12,7 @@ if (isset($_GET['id'])) {
     // Execute the statement
     if ($stmt->execute([$id])) {
         echo "User successfully deleted";
+        sleep(3);
     } else {
         echo "Error deleting user: " . $stmt->error;
     }
@@ -24,5 +25,3 @@ if (isset($_GET['id'])) {
 
 // Close the database connection
 $conn->close();
-
-sleep(3);
