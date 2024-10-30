@@ -67,8 +67,9 @@ $result = $conn->query($sql);
             color: white;
         }
 
-        tbody>tr:hover {
-            background-color: #ffc107;
+        tbody .action:hover {
+            background-color: yellow;
+
         }
 
         th {
@@ -81,7 +82,7 @@ $result = $conn->query($sql);
             font-weight: bold;
             text-transform: uppercase;
             display: inline-block;
-
+            margin-top: 30px;
         }
 
         td a {
@@ -89,6 +90,8 @@ $result = $conn->query($sql);
             color: #A52A2A;
             font-weight: bold;
             text-transform: uppercase;
+            vertical-align: middle;
+            margin-top: 0;
         }
     </style>
 </head>
@@ -111,12 +114,12 @@ $result = $conn->query($sql);
                 echo "<tr>";
                 echo "<th>" . $row['name'] . "</th>";
                 echo "<td>" . $row['email'] . "</td>";
-                echo '<td><a href="delete.php?id=' . $row['id'] . '">Delete</a></td>';
-                echo '<td><a href="update.php?id=' . $row['id'] . '">Update</a></td>';
+                echo '<td class="action"><a href="delete.php?id=' . $row['id'] . '">Delete</a></td>';
+                echo '<td class="action"><a href="update.php?id=' . $row['id'] . '">Update</a></td>';
                 echo "</tr>";
             }
         } else {
-            echo "<tr><td colspan='4'>No Contacts</td></tr>";
+            echo "<tr><td colspan='4' style='color:#A52A2A; font-size: 1em; font-weight: bold; text-transform:uppercase;'>No Contacts !</td></tr>";
         }
 
         ?>

@@ -10,6 +10,10 @@
             text-align: center;
             color: #007F00;
             vertical-align: middle;
+            margin-top: 200px;
+            text-transform: uppercase;
+            font-size: 60px;
+
         }
     </style>
 
@@ -28,7 +32,7 @@
 
         // Execute the statement
         if ($stmt->execute([$id])) {
-            echo "<h1>User successfully deleted<h1>";
+            echo "<h1>User successfully deleted !<h1>";
 
             // Use JavaScript to redirect after 2 seconds
             echo "<script>
