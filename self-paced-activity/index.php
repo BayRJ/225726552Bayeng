@@ -32,10 +32,11 @@ $result = $conn->query($sql);
         }
 
         table {
-            text-align: left;
+            text-align: center;
             position: relative;
             border-collapse: collapse;
             background-color: #f6f6f6;
+            margin: 0 auto;
         }
 
         /* Spacing */
@@ -65,6 +66,17 @@ $result = $conn->query($sql);
 
         tbody>tr:hover {
             background-color: #ffc107;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #f6f6f6;
+            font-weight: bold;
+            text-transform: uppercase;
         }
     </style>
 </head>
