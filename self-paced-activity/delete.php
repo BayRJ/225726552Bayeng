@@ -6,11 +6,16 @@ include 'db.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $sql = "DELETE FROM users WHERE id=$id";
+    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+    $stmt->bind_param("i", $id);
 
-    if ($conn->query($sql) === TRUE) {
+
+    if ($stmt->execute()) {
         echo "User successfully deleted";
     } else {
         echo "Error deleting user." . $sql . "<br>" . $conn->error;
     }
+    $stmt->close();
+} else {
+    echo "No ID specified for deletion.";
 }
