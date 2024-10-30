@@ -23,6 +23,8 @@ $result = $conn->query($sql);
         body {
             font-family: sans-serif;
             color: #0a0a23;
+            width: 100vw;
+            height: 100vh;
         }
 
         h2 {
