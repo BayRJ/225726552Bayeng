@@ -9,7 +9,6 @@
         h1 {
             text-align: center;
             color: #007F00;
-            position: relative;
             padding-top: 50%;
         }
     </style>
