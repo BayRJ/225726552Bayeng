@@ -14,6 +14,59 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users Table</title>
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            color: #0a0a23;
+        }
+
+        h2 {
+            color: #800020;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        table {
+            text-align: left;
+            position: relative;
+            border-collapse: collapse;
+            background-color: #f6f6f6;
+        }
+
+        /* Spacing */
+        td,
+        th {
+            border: 1px solid #999;
+            padding: 20px;
+        }
+
+        th {
+            background: brown;
+            color: white;
+            border-radius: 0;
+            position: sticky;
+            top: 0;
+            padding: 10px;
+        }
+
+        .primary {
+            background-color: #000000
+        }
+
+        tfoot>tr {
+            background: black;
+            color: white;
+        }
+
+        tbody>tr:hover {
+            background-color: #ffc107;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,7 +97,7 @@ $result = $conn->query($sql);
 
         ?>
     </table>
-
+    <a href="index.php">Back to users table</a>
 </body>
 
 </html>

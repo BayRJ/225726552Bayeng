@@ -9,7 +9,7 @@
         h1 {
             text-align: center;
             color: #007F00;
-            padding-top: 50%;
+            vertical-align: middle;
         }
     </style>
 
