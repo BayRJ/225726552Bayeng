@@ -8,9 +8,9 @@
     <style>
         h1 {
             text-align: center;
-            color: #00FF00;
+            color: #007F00;
             position: relative;
-            top: 50%;
+            padding-top: 50%;
         }
     </style>
 
