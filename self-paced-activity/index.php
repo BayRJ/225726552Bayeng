@@ -74,7 +74,7 @@ $result = $conn->query($sql);
 
         td a {
             text-decoration: none;
-            color: #f6f6f6;
+            color: #A52A2A;
             font-weight: bold;
             text-transform: uppercase;
         }
@@ -86,7 +86,7 @@ $result = $conn->query($sql);
 
     <table border="1">
         <tr>
-            <th>Name</th>
+            <th class="primary">Name</th>
             <th>Email</th>
             <th>Delete</th>
             <th>Update</th>
@@ -97,7 +97,7 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . $row['name'] . "</td>";
+                echo "<th>" . $row['name'] . "</th>";
                 echo "<td>" . $row['email'] . "</td>";
                 echo '<td><a href="delete.php?id=' . $row['id'] . '">Delete</a></td>';
                 echo '<td><a href="update.php?id=' . $row['id'] . '">Update</a></td>';
