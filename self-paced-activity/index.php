@@ -25,6 +25,7 @@ $result = $conn->query($sql);
             color: #0a0a23;
             width: 100vw;
             height: 100vh;
+            text-align: center;
         }
 
         h2 {
@@ -79,7 +80,8 @@ $result = $conn->query($sql);
             color: blue;
             font-weight: bold;
             text-transform: uppercase;
-            text-align: center;
+            display: inline-block;
+
         }
 
         td a {
@@ -119,7 +121,7 @@ $result = $conn->query($sql);
 
         ?>
     </table>
-    <a href="index.php">Back to users table</a>
+    <a href="add.php">Add new user</a>
 </body>
 
 </html>
