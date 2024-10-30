@@ -26,6 +26,7 @@ $result = $conn->query($sql);
             width: 100vw;
             height: 100vh;
             text-align: center;
+            overflow: hidden;
         }
 
         h2 {
