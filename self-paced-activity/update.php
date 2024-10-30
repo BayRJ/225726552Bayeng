@@ -1,3 +1,43 @@
+<?php
+
+include 'db.php';
+
+
+if (isset($GET['id'])) {
+    $id = $GET['id'];
+
+    $sql = "SELECT * FROM users WHERE id=$id";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $name = $row['name'];
+        $email = $row['email'];
+    } else {
+        echo "No contact found with the ID provided";
+    }
+}
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $id = $_POST['id'];
+
+    if (!empty($name) && !empty($email)) {
+        $sql = "UPDATE users SET name='$name',email='$email' WHERE id=$id";
+        if ($conn->query($sql) === TRUE) {
+            echo "User successfully deleted";
+        } else {
+            echo "Error updating user." . $sql . "<br>" . $conn->error;
+        }
+    }
+} else {
+    echo "Please fill in all fields.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,44 +60,3 @@
 </body>
 
 </html>
-
-
-<?php
-
-include 'db.php';
-
-
-if (isset($GET['id'])) {
-    $id = $GET['id'];
-
-    $sql = "SELECT * FROM contact WHERE id=$id";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $name = $row['name'];
-        $email = $row['email'];
-    } else {
-        echo "No contact found with the ID provided";
-    }
-}
-
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $id = $_POST['id'];
-
-    if (!empty($name) && !empty($email)) {
-        $sql = "UPDATE contacts SET name='$name',email='$email' WHERE id=$id";
-        if ($conn->query($sql) === TRUE) {
-            echo "User succesfully deleted";
-        } else {
-            echo "Error updating user." . $sql . "<br>" . $conn->error;
-        }
-    }
-} else {
-    echo "Please fill in all fields.";
-}
-?>
