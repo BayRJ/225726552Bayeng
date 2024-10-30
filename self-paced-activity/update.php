@@ -2,7 +2,6 @@
 
 include 'db.php';
 
-
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
@@ -15,10 +14,9 @@ if (isset($_GET['id'])) {
         $email = $row['email'];
     } else {
         echo "No contact found with the ID provided";
+        exit;
     }
 }
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
@@ -26,15 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
 
     if (!empty($name) && !empty($email)) {
-        $sql = "UPDATE users SET name='$name',email='$email' WHERE id=$id";
+        $sql = "UPDATE users SET name='$name', email='$email' WHERE id=$id";
         if ($conn->query($sql) === TRUE) {
-            echo "User successfully deleted";
+            echo "User successfully updated";
         } else {
-            echo "Error updating user." . $sql . "<br>" . $conn->error;
+            echo "Error updating user: " . $conn->error;
         }
+    } else {
+        echo "Please fill in all fields.";
     }
-} else {
-    echo "Please fill in all fields.";
 }
 ?>
 
@@ -44,16 +42,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Updated List of Users</title>
+    <title>Update User</title>
 </head>
 
 <body>
-    <h2>Update user</h2>
+    <h2>Update User</h2>
 
-    <form method="post" action="add.php">
+    <form method="post" action="">
         <input type="hidden" name="id" value="<?php echo $id; ?>" />
-        Name: <input type="text" name="name" /><br><br>
-        Phone: <input type="email" name="email" /><br><br>
+        Name: <input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>" /><br><br>
+        Email: <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" /><br><br>
         <input type="submit" value="Update Contact">
     </form>
     <a href="index.php">Back to users table</a>

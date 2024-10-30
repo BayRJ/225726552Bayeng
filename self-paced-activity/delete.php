@@ -7,10 +7,10 @@ if (isset($_GET['id'])) {
 
     // Prepare the DELETE statement
     $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
-    $stmt->bind_param("i", $id);
+
 
     // Execute the statement
-    if ($stmt->execute()) {
+    if ($stmt->execute([$id])) {
         echo "User successfully deleted";
     } else {
         echo "Error deleting user: " . $stmt->error;
