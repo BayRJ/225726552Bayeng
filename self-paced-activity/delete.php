@@ -8,11 +8,12 @@ if (isset($_GET['id'])) {
     // Prepare the DELETE statement
     $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
 
-    header("Location: ./index.php");
     // Execute the statement
     if ($stmt->execute([$id])) {
         echo "User successfully deleted";
-        sleep(3);
+        sleep(2);  // Wait 2 seconds before redirecting
+        header("Location: index.php");
+        exit();
     } else {
         echo "Error deleting user: " . $stmt->error;
     }
