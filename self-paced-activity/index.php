@@ -72,6 +72,14 @@ $result = $conn->query($sql);
             text-align: center;
         }
 
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
         td a {
             text-decoration: none;
             color: #A52A2A;
