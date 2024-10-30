@@ -27,4 +27,4 @@ $conn->close();
 
 sleep(3);
 
-header("Location:./index.php");
+header("Location: ./index.php");
