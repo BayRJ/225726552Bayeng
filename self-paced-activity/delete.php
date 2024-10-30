@@ -11,9 +11,13 @@ if (isset($_GET['id'])) {
     // Execute the statement
     if ($stmt->execute([$id])) {
         echo "User successfully deleted";
-        sleep(2);  // Wait 2 seconds before redirecting
-        header("Location: index.php");
-        exit();
+
+        // Use JavaScript to redirect after 2 seconds
+        echo "<script>
+                setTimeout(function() {
+                    window.location.href = 'index.php';
+                }, 2000);  // 2-second delay before redirect
+              </script>";
     } else {
         echo "Error deleting user: " . $stmt->error;
     }
