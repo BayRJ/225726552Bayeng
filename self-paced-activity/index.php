@@ -27,7 +27,7 @@
         <?php
 
         if ($result->num_rows > 0) {
-            while ($row = $result->_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['name'] . '</td>';
                 echo "<td>" . $row['email'] . '</td>';
