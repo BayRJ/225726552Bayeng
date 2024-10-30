@@ -1,7 +1,7 @@
 <?php
 $servername = "192.168.100.24";
 $username = "root";
-$password = "";
+$password = 'your_password';
 $dbname = "usersdatabase";
 
 //Create Connection
